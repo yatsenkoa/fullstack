@@ -1,0 +1,11 @@
+note over browser
+when notes_form is submitted, spa.js adds the note locally
+and sends it to data.json in the form of a POST request.
+end note 
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: 201 Created
+
+
+
+

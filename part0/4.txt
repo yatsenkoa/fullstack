@@ -1,0 +1,23 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTTP Status Code 302
+
+note over browser:
+the server sends a redirect request to notes,
+causing the browser to load the page again.
+end note 
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser
+while executing main.js, 
+the browser requests data.json again, 
+which now has the new note
+end note
+
+browser->server: HTTP GET http://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
